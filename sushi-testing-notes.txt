@@ -1,0 +1,17 @@
+Sushi is good
+
+Class User
+  first name
+  last name
+  password
+  username
+
+  has_many SushiRolls
+
+Class SushiRoll
+  name
+  price:float
+  primary ingredient
+  secondary ingredient
+
+  belongs_to User  

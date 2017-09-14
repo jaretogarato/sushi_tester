@@ -1,0 +1,40 @@
+<h1>Create a new roll for our list</h1>
+
+<%#= form_for @roll, { local: true, class: "ui form"} do |form| %>
+<%#= form_with(model: person, local: true, class: "ui form") do |form| %>
+<%= form_with(model: @roll, local: true, id: current_user.id, class: "ui form") do |form|  %>
+
+  <% if @roll.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@roll.errors.count, "error") %> prohibited this roll from being saved:</h2>
+      <ul>
+        <% @roll.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%#= current_user.id %>
+  <%= form.hidden_field user: current_user.id, id: :sushi_roll_name, required: true %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :sushi_roll_name, required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :sushi_roll_price, required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :primary_ingredient %>
+    <%= form.text_field :primary_ingredient, id: :sushi_roll_primary_ingredient, required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :secondary_ingredient %>
+    <%= form.text_field :name, id: :sushi_roll_secondary_ingredient, required: true %>
+  </div>
+  <div class="actions">
+    <%= form.submit nil, class: "ui button primary" %>
+  </div>
+<% end %>

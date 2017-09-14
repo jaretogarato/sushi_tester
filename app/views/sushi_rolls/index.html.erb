@@ -1,0 +1,36 @@
+<h1>Sushi Rolls for <%= current_user.first_name %></h1>
+
+<% if @rolls.any? %>
+  <div class="ui four column doubling stackable grid container">
+    <% @rolls.each do |roll| %>
+      <div class="column">
+        <h3 class='truncated-text'><%= roll.name %></h3>
+      </div>
+      <div class="column">&nbsp;</div>
+      <div class="column">
+        <%= link_to 'See details', sushi_roll_path(roll.id), class: 'btn btn-primary' %>
+      </div>
+      <div class="column">
+        <%= link_to 'Delete Roll', sushi_roll_path(roll), method: :delete %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- <br /><br /><br /><br /><br /><br /><br /><br />
+
+<h4>ADMIN</h4>
+<div class="ui four column doubling stackable grid container">
+  <div class="column">
+    <%= link_to 'New Roll', new_sushi_roll_path %>
+  </div>
+  <div class="column">
+    b
+  </div>
+  <div class="column">
+    c
+  </div>
+  <div class="column">
+    d
+  </div>
+</div> -->

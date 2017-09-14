@@ -5,6 +5,8 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 DS_Store
+/coverage/
+gem install factory_girl_rails
 
 # Ignore bundler config.
 /.bundle
