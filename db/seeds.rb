@@ -1,3 +1,4 @@
+User.create(first_name: "Jareto", last_name: "Garato", username: "jgg", email: "test@test.com", password:"password" )
 SushiRoll.create(name: "Surf & Turf Roll", price: 12.95, primary_ingredient: "Cucumber", secondary_ingredient: "Fish Cake", user_id: 1)
 SushiRoll.create(name: "Veggie Roll", price: 6.95 , primary_ingredient: "Cucumber", secondary_ingredient: "Carrot", user_id: 1)
 SushiRoll.create(name: "Caterpillar Roll", price: 13.95 , primary_ingredient: "Avocado", secondary_ingredient: "Unagi", user_id: 1)

@@ -7,12 +7,14 @@ class SushiRollsController < ApplicationController
   end
 
   def new
-    @roll = SushiRoll.new
+    # @roll = SushiRoll.new
+    @roll = current_user.sushi_rolls.new
   end
 
   def create
     # render new with flash message
-    @roll = SushiRoll.new(sushi_rolls_params)
+    @roll = current_user.sushi_rolls.new(sushi_rolls_params)
+    # SushiRoll.new(sushi_rolls_params)
 
     respond_to do |format|
       if @roll.save
@@ -45,6 +47,6 @@ class SushiRollsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def sushi_rolls_params
     # params.require(:sushi_rolls).permit(:name, :price, :first_ingredient, :second_ingredient)
-    params.permit(:name, :price, :first_ingredient, :second_ingredient)
+    params.require(:sushi_roll).permit(:name, :price, :primary_ingredient, :secondary_ingredient)
   end
 end

@@ -16,15 +16,15 @@
   <% end %>
 
   <%#= current_user.id %>
-  <%= form.hidden_field user: current_user.id, id: :sushi_roll_name, required: true %>
+  <%#= form.hidden_field user: current_user.id, id: :sushi_roll_name, required: true %>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :sushi_roll_name, required: true %>
+    <%= form.text_field :name, id: :name, required: true %>
   </div>
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price, id: :sushi_roll_price, required: true %>
+    <%= form.text_field :price, id: :price, required: true %>
   </div>
   <div class="field">
     <%= form.label :primary_ingredient %>
@@ -32,7 +32,7 @@
   </div>
   <div class="field">
     <%= form.label :secondary_ingredient %>
-    <%= form.text_field :name, id: :sushi_roll_secondary_ingredient, required: true %>
+    <%= form.text_field :secondary_ingredient, id: :sushi_roll_secondary_ingredient, required: true %>
   </div>
   <div class="actions">
     <%= form.submit nil, class: "ui button primary" %>
